@@ -7,22 +7,22 @@ django-admin startproject pc_admin
 cd pc_admin & python manage.py startapp backend 
 ## 创建前端目录
 vue create frontend #vue-cli4 
-`
+#```
 // vue.config.js
 module.exports = {
  // build 出來的結果會有個static目錄，backend就能訪問的到靜態文件
  assetsDir: 'static'
 };
-`
+#```
 ## 设置urls
-`
+#```
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'', TemplateView.as_view(template_name="index.html")),
     path('api/', include('backend.urls'))
 ]
-`
-`
+#```
+#```
 backend/urls.py
 from django.urls import path
 from . import views
@@ -30,9 +30,9 @@ from . import views
 urlpatterns = [
     path('search', views.search)
 ]
-`
+#```
 ## 设置setting
-`
+#```
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/dist"),
@@ -53,7 +53,7 @@ TEMPLATES = [
         },
     },
 ]
-`
+#```
 ## 编译前端
 npm run build
 ## 启动后端
@@ -68,17 +68,19 @@ python manager.py createsuperuser #新建数据库管理用户
 admin/admin 283605231@163.co
 ## 页面查看数据库：http://127.0.0.1:8000/admin/
 ## 中文支持 setting.py
+#```
 LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'zh-hans'
 
 #TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Shanghai'
-
+#```
 ## model管理
+#```
 #admin.py
 from django.contrib import admin
 from .models import *
-
+#```
 ## 如果需要通过/admin进行模型管理，需要进行注册
 admin.site.register(BookIndex)
 
@@ -86,7 +88,7 @@ admin.site.register(BookIndex)
 ## **django整合scrapy,用于保存数据**
 ## 连接django与scrapy，其实就是用django的model直接保存文件，但是这个在scrapyd不能用。
 pip install scrapy_djangoitem
-`
+#```
 #爬虫的setting.py
 import os
 import sys
@@ -95,9 +97,9 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'pc_admin.settings'
 
 import django
 django.setup()
-`
+#```
 #爬虫 items
-`
+#```
 from scrapy_djangoitem import DjangoItem
 from backend import models
 
@@ -110,7 +112,7 @@ class BookPipeline(object):
     def process_item(self, item, spider):
         item.save()
         return item
-`
+#```
 ## 安装scrapyd 
 pip install scrapyd
 ## 安装客户端scrapyd-client
