@@ -7,7 +7,7 @@ django-admin startproject pc_admin
 cd pc_admin & python manage.py startapp backend 
 ## 创建前端目录
 vue create frontend #vue-cli4 
-"```
+"```java
 #vue.config.js
 module.exports = {
  #build 出來的結果會有個static目錄，backend就能訪問的到靜態文件
