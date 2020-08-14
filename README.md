@@ -144,6 +144,5 @@ http://localhost:6800/schedule.json （post方式，data={"project":myproject,"s
 7. 删除某一版本爬虫
 http://127.0.0.1:6800/delversion.json （post方式，data={"project":myproject,"version":myversion}）
 8. 删除某一工程，包括该工程下的各版本爬虫
-  
 http://127.0.0.1:6800/delproject.json（post方式，data={"project":myproject}）
 
