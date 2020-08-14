@@ -1,9 +1,9 @@
 # spider
 查询并爬取笔趣阁小说，查看目录，加载章节并查看，支持浏览器和手机。django+scrapy+vue
-# 安装PyCharm
-# django-admin startproject pc_admin 创建工程目录
-# cd pc_admin & python manage.py startapp backend 创建后端目录
-# vue create frontend #vue-cli4 创建前端目录
+## 安装PyCharm
+## django-admin startproject pc_admin 创建工程目录
+## cd pc_admin & python manage.py startapp backend 创建后端目录
+## vue create frontend #vue-cli4 创建前端目录
 `
 // vue.config.js
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
  assetsDir: 'static'
 };
 `
-# 设置urls
+## 设置urls
 `
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,7 +28,7 @@ urlpatterns = [
     path('search', views.search)
 ]
 `
-# 设置setting
+## 设置setting
 `
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATICFILES_DIRS = [
@@ -51,35 +51,35 @@ TEMPLATES = [
     },
 ]
 `
-# npm run build
-# python manage.py runserver
-# 生成迁移文件：根据模型类型生成sql语句
+## npm run build
+## python manage.py runserver
+## 生成迁移文件：根据模型类型生成sql语句
 #生成sql
 python manage.py makemigrations backend
-# 执行sql 生成表，默认数据库sqllite
+## 执行sql 生成表，默认数据库sqllite
 python manage.py migrate
 python manager.py shell #数据库控制台
 python manager.py createsuperuser #新建数据库管理用户
 admin/admin 283605231@163.co
-# 页面查看数据库：http://127.0.0.1:8000/admin/
-# 中文支持 setting.py
+## 页面查看数据库：http://127.0.0.1:8000/admin/
+## 中文支持 setting.py
 LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'zh-hans'
 
 #TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Shanghai'
 
-# model管理
+## model管理
 #admin.py
 from django.contrib import admin
 from .models import *
 
-# 如果需要通过/admin进行模型管理，需要进行注册
+## 如果需要通过/admin进行模型管理，需要进行注册
 admin.site.register(BookIndex)
 
 
-# **django整合scrapy,用于保存数据**
-# pip install scrapy_djangoitem # 用来连接django与scrapy，其实就是用django的model直接保存文件，但是这个在scrapyd不能用。
+## **django整合scrapy,用于保存数据**
+## pip install scrapy_djangoitem # 用来连接django与scrapy，其实就是用django的model直接保存文件，但是这个在scrapyd不能用。
 `
 #爬虫的setting.py
 import os
@@ -105,17 +105,17 @@ class BookPipeline(object):
         item.save()
         return item
 `
-# pip install scrapyd
-# pip3 install scrapyd-client
-# scrapyd-deploy -h
+## pip install scrapyd
+## pip3 install scrapyd-client
+## scrapyd-deploy -h
 如果上面的命令不可行，在path下新建：scrapyd-deploy.bat
 "F:\soft\anaconda\python.exe" "F:\soft\anaconda\Scripts\scrapyd-deploy" %1 %2 %3 %4 %5 %6 %7 %8 %9
 
-# scrapyd 
+## scrapyd 
 #如果启动报错， 有可能包版本不对， 升级一下
 pip install --upgrade attrs
 
-# 发布：scrapyd-deploy 爬虫名称 -p 项目名称
+## 发布：scrapyd-deploy 爬虫名称 -p 项目名称
 1、获取状态
 http://127.0.0.1:6800/daemonstatus.json
 2、获取项目列表
