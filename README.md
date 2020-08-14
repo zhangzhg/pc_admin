@@ -1,9 +1,12 @@
 # spider
 查询并爬取笔趣阁小说，查看目录，加载章节并查看，支持浏览器和手机。django+scrapy+vue
 ## 安装PyCharm
-## django-admin startproject pc_admin 创建工程目录
-## cd pc_admin & python manage.py startapp backend 创建后端目录
-## vue create frontend #vue-cli4 创建前端目录
+## 创建工程目录
+django-admin startproject pc_admin 
+## 创建后端目录
+cd pc_admin & python manage.py startapp backend 
+## 创建前端目录
+vue create frontend #vue-cli4 
 `
 // vue.config.js
 module.exports = {
@@ -51,8 +54,10 @@ TEMPLATES = [
     },
 ]
 `
-## npm run build
-## python manage.py runserver
+## 编译前端
+npm run build
+## 启动后端
+python manage.py runserver
 ## 生成迁移文件：根据模型类型生成sql语句
 #生成sql
 python manage.py makemigrations backend
@@ -79,7 +84,8 @@ admin.site.register(BookIndex)
 
 
 ## **django整合scrapy,用于保存数据**
-## pip install scrapy_djangoitem # 用来连接django与scrapy，其实就是用django的model直接保存文件，但是这个在scrapyd不能用。
+## 连接django与scrapy，其实就是用django的model直接保存文件，但是这个在scrapyd不能用。
+pip install scrapy_djangoitem
 `
 #爬虫的setting.py
 import os
@@ -105,17 +111,22 @@ class BookPipeline(object):
         item.save()
         return item
 `
-## pip install scrapyd
-## pip3 install scrapyd-client
-## scrapyd-deploy -h
+## 安装scrapyd 
+pip install scrapyd
+## 安装客户端scrapyd-client
+pip3 install scrapyd-client
+## 测试安装
+scrapyd-deploy -h
 如果上面的命令不可行，在path下新建：scrapyd-deploy.bat
 "F:\soft\anaconda\python.exe" "F:\soft\anaconda\Scripts\scrapyd-deploy" %1 %2 %3 %4 %5 %6 %7 %8 %9
 
-## scrapyd 
+## 启动爬虫服务
+scrapyd
 #如果启动报错， 有可能包版本不对， 升级一下
 pip install --upgrade attrs
 
-## 发布：scrapyd-deploy 爬虫名称 -p 项目名称
+## 发布爬虫
+scrapyd-deploy 爬虫名称 -p 项目名称
 1、获取状态
 http://127.0.0.1:6800/daemonstatus.json
 2、获取项目列表
