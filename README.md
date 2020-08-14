@@ -129,21 +129,21 @@ pip install --upgrade attrs
 
 ## 发布爬虫
 scrapyd-deploy 爬虫名称 -p 项目名称
-1、获取状态
+1.获取状态
 http://127.0.0.1:6800/daemonstatus.json
-2、获取项目列表
+2.获取项目列表
 http://127.0.0.1:6800/listprojects.json
-3、获取项目下已发布的爬虫列表
+3.获取项目下已发布的爬虫列表
 http://127.0.0.1:6800/listspiders.json?project=myproject
-4、获取项目下已发布的爬虫版本列表
+4.获取项目下已发布的爬虫版本列表
 http://127.0.0.1:6800/listversions.json?project=myproject
-5、获取爬虫运行状态
+5.获取爬虫运行状态
 http://127.0.0.1:6800/listjobs.json?project=myproject
- 6、启动服务器上某一爬虫（必须是已发布到服务器的爬虫）
+6.启动服务器上某一爬虫（必须是已发布到服务器的爬虫）
 http://localhost:6800/schedule.json （post方式，data={"project":myproject,"spider":myspider}）
-7、删除某一版本爬虫
+7.删除某一版本爬虫
 http://127.0.0.1:6800/delversion.json （post方式，data={"project":myproject,"version":myversion}）
-8、删除某一工程，包括该工程下的各版本爬虫
+8.删除某一工程，包括该工程下的各版本爬虫
   
 http://127.0.0.1:6800/delproject.json（post方式，data={"project":myproject}）
 
