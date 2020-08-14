@@ -8,21 +8,21 @@ cd pc_admin & python manage.py startapp backend
 ## 创建前端目录
 vue create frontend #vue-cli4 
 "```
-// vue.config.js
+#vue.config.js
 module.exports = {
- // build 出來的結果會有個static目錄，backend就能訪問的到靜態文件
+ #build 出來的結果會有個static目錄，backend就能訪問的到靜態文件
  assetsDir: 'static'
 };
 "```
 ## 设置urls
-#```
+"```
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'', TemplateView.as_view(template_name="index.html")),
     path('api/', include('backend.urls'))
 ]
-#```
-#```
+"```
+"```
 backend/urls.py
 from django.urls import path
 from . import views
@@ -30,9 +30,9 @@ from . import views
 urlpatterns = [
     path('search', views.search)
 ]
-#```
+"```
 ## 设置setting
-#```
+"```
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/dist"),
@@ -53,7 +53,7 @@ TEMPLATES = [
         },
     },
 ]
-#```
+"```
 ## 编译前端
 npm run build
 ## 启动后端
