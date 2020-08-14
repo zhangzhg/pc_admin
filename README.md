@@ -62,10 +62,10 @@ python manage.py runserver
 #生成sql
 python manage.py makemigrations backend
 ## 执行sql 生成表，默认数据库sqllite
-python manage.py migrate
-python manager.py shell #数据库控制台
-python manager.py createsuperuser #新建数据库管理用户
-admin/admin 283605231@163.co
+- python manage.py migrate
+- python manager.py shell #数据库控制台
+- python manager.py createsuperuser #新建数据库管理用户
+- admin/admin 283605231@163.com
 ## 页面查看数据库：http://127.0.0.1:8000/admin/
 ## 中文支持 setting.py
 ```javascript
@@ -118,9 +118,9 @@ pip install scrapyd
 ## 安装客户端scrapyd-client
 pip3 install scrapyd-client
 ## 测试安装
-scrapyd-deploy -h
-如果上面的命令不可行，在path下新建：scrapyd-deploy.bat
-"F:\soft\anaconda\python.exe" "F:\soft\anaconda\Scripts\scrapyd-deploy" %1 %2 %3 %4 %5 %6 %7 %8 %9
+- scrapyd-deploy -h
+- 如果上面的命令不可行，在path下新建：scrapyd-deploy.bat
+- 内容： "F:\soft\anaconda\python.exe" "F:\soft\anaconda\Scripts\scrapyd-deploy" %1 %2 %3 %4 %5 %6 %7 %8 %9
 
 ## 启动爬虫服务
 scrapyd
