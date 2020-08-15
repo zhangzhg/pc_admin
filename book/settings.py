@@ -106,13 +106,12 @@ DOWNLOADER_MIDDLEWARES = {
    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None
 }
 
-DB_PATH = 'D:\\book-reader\\pc_admin\\db.sqlite3'
+# DB_PATH = 'D:\\book-reader\\pc_admin\\db.sqlite3'
 
 import os
 import sys
 sys.path.append('/../')
 sys.path.append(os.path.dirname(os.path.abspath('.')))
-print(sys.path)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'pc_admin.settings'
 
 # scrapyd 打包后这个估计就没用了， 入库失败。

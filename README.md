@@ -1,4 +1,4 @@
-# spider
+﻿# spider
 查询并爬取笔趣阁小说，查看目录，加载章节并查看，支持浏览器和手机。django+scrapy+vue
 ## 安装PyCharm
 ## 创建工程目录
@@ -65,6 +65,7 @@ python manage.py makemigrations backend
 - python manage.py migrate
 - python manager.py shell #数据库控制台
 - python manager.py createsuperuser #新建数据库管理用户
+- python manage.py createcachetable cache_table
 - admin/admin 283605231@163.com
 ## 页面查看数据库：http://127.0.0.1:8000/admin/
 ## 中文支持 setting.py

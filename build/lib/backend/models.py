@@ -4,7 +4,7 @@ from django.db import models
 # 檢索數據目錄表
 class BookIndex(models.Model):
     # 書名
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=100)
     # 描述
     desc = models.CharField(max_length=100)
     # 作者
@@ -22,7 +22,7 @@ class BookIndex(models.Model):
 # 每个章节详情
 class BookItem(models.Model):
     # 章节名
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=100)
     # 当前页
     url = models.CharField(max_length=200)
     # 内容
@@ -31,12 +31,12 @@ class BookItem(models.Model):
 
 class BookChapter(models.Model):
     # 章节名
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=100)
     # 当前页
     count = models.IntegerField()
     # 链接地址
     url = models.CharField(max_length=100)
     # 书名
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=100)
     # 是否已加载
     load = models.IntegerField()

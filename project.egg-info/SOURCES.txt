@@ -1,3 +1,4 @@
+README.md
 setup.py
 backend/__init__.py
 backend/admin.py
@@ -11,6 +12,8 @@ backend/migrations/0002_auto_20200723_1204.py
 backend/migrations/0003_bookitem.py
 backend/migrations/0004_auto_20200723_1730.py
 backend/migrations/0005_bookchapter.py
+backend/migrations/0006_auto_20200815_1132.py
+backend/migrations/0007_auto_20200815_1324.py
 backend/migrations/__init__.py
 book/__init__.py
 book/items.py
